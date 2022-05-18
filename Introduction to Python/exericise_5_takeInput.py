@@ -1,7 +1,6 @@
-# Вывести сообщение если были введены данные пользователем
-messag=input("Enter text:")
-if messag:
-    print("Введенный текст " + messag)
-else:
-    print("Текст не введен")
-
+#Вывод сообщения если введено число в строку ввода больше 0
+number=int(input("Введитие число: "))
+if number>0:
+    print(1)
+elif number<0:
+     print(-1)
