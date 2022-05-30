@@ -9,7 +9,7 @@ wariorTwo.wariorHelth=100
 print(type(wariorTwo.wariorHelth),wariorOne.wariorHelth)
 
 while not wariorOne.wariorHelth <=0 and not wariorTwo.wariorHelth <=0:
-    atack=random.randint(0,2)
+    atack=random.randint(1,2)
     if atack==1:
         print('Warior one atack warrior two')
         wariorTwo.wariorHelth-=20
