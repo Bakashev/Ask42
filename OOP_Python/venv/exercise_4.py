@@ -8,10 +8,11 @@ class Character:
         self.team = t
 
 
-
 class Warrior(Character):
-    def followTheHero (self):
-        return 'run for {0}'.format(self)
+    def followTheHero (self, n):
+        #self.name=n
+        #print(n.uniqueCode, self.uniqueCode)
+        return n.uniqueCode, self.uniqueCode
 
 class Hero (Character):
     def __init__(self,t,l=0):
@@ -34,9 +35,9 @@ for i in range(10):
     name=Warrior('{}'.format(random.choice(team)))
 
     if name.team == team[0]:
-        teamBlue.append(name.uniqueCode)
+        teamBlue.append(name)
     elif name.team == team[1]:
-        teamRed.append(name.uniqueCode)
+        teamRed.append(name)
     print(name.uniqueCode,name.team)
 #print(temRed,teamBlue)
 print(' red team {0} kol {1} \n blue team {2} kol {3} '.format(teamRed, len(teamRed), teamBlue, len(teamBlue)))
@@ -46,4 +47,7 @@ elif len(teamBlue)<len(teamRed):
     herowTwo.skilUp()
 print(' level heroe blue {0}\n level heroe red {1} '.format(herowOne.level, herowTwo.level))
 
-print(name.followTheHero())
+print("Warrior {1} follow the Heroe {0}".format(teamBlue[0].followTheHero(herowTwo)[0]
+                                               ,teamBlue[0].followTheHero(herowTwo)[1]))
+
+#print(name.name)
