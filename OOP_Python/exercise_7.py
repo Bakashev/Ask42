@@ -1,8 +1,9 @@
 # Класс создает объект с атрибутом площадь объекта
+import math
 class WinDoor:
     def __init__(self,x,y):
         self.square=x*y
-
+#!!!!Посмотрть по возможности замены расчета площади через метод для окон и дверей
 # Созадние класса комнта
 
 class Room:
@@ -25,13 +26,34 @@ class Room:
         for i in self.wd:
             new_square-=i.square
         return new_square
-
+    def kolWalpapper (self,width,length):
+        self.squreWallpepper = width*length
+        self.rezult = self.workSurface() / self.squreWallpepper
+        return math.ceil(self.rezult)
 
 # основной код
-squreRoom=Room(4,5,6)
+widthRoom = float(input("Enter width room: "))
+heightRoom = float(input("Enter Height room: "))
+lengthRoom = float(input("Enter length room: "))
+squreRoom=Room(lengthRoom,heightRoom,widthRoom)
+print("Enter amount window and door")
+amountWinDoor=int(input("Amount: "))
+i=0
+while i < amountWinDoor:
+    print('Enter size window or door')
+    widthWinDoor = float(input("Enter width window or door: "))
+    hightWinDoor= float(input("Enter hieght window or door: "))
+    squreRoom.addWD(widthWinDoor,hightWinDoor)
+    i+=1
+
 #print(squreRoom.square)
-squreRoom.addWD(2,3)
-squreRoom.addWD(2,3)
-squreRoom.addWD(4,2)
-print(squreRoom.workSurface())
-print(squreRoom.square)
+
+#squreRoom.addWD(2,3)
+#squreRoom.addWD(4,2)
+print("Square room: {0}".format(squreRoom.setSquare()))
+print("Work surface: {}".format(squreRoom.workSurface()))
+print("Amount walpappers: {}".format(squreRoom.kolWalpapper(2,3)))
+print("Square once roll: {}".format(squreRoom.squreWallpepper))
+
+
+
