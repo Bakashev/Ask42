@@ -32,12 +32,33 @@ class Room:
         return math.ceil(self.rezult)
 
 # основной код
-widthRoom = float(input("Enter width room: "))
-heightRoom = float(input("Enter Height room: "))
-lengthRoom = float(input("Enter length room: "))
-squreRoom=Room(lengthRoom,heightRoom,widthRoom)
+# Проверяем на корректность ввода значения
+widthRoom = input("Enter width room: ")
+heightRoom = input("Enter Height room: ")
+lengthRoom = input("Enter length room: ")
+while type(widthRoom) and type(heightRoom) and type(lengthRoom) != float:
+    try:
+            widthRoom=float(widthRoom)
+            heightRoom=float(heightRoom)
+            lengthRoom=float(lengthRoom)
+            squreRoom = Room(lengthRoom, heightRoom, widthRoom)
+    except ValueError:
+            if type(widthRoom)!=float:
+                widthRoom = input("Enter width room: ")
+            elif type(heightRoom)!=float:
+                heightRoom = input("Enter Height room: ")
+            elif type(lengthRoom)!=float:
+                lengthRoom = input("Enter length room: ")
+
+
+
 print("Enter amount window and door")
-amountWinDoor=int(input("Amount: "))
+
+amountWinDoor=input("Amount: ")
+while not amountWinDoor.isdigit():
+    amountWinDoor = input("Amount: ")
+else:
+    amountWinDoor=int(amountWinDoor)
 i=0
 while i < amountWinDoor:
     print('Enter size window or door')
