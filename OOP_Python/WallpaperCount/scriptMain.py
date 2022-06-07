@@ -1,16 +1,20 @@
 import WallpaperCount.Calculation
 # основной код
 # Проверяем на корректность ввода значения
+"""Enter start value"""
 widthRoom = input("Enter width room: ")
 heightRoom = input("Enter Height room: ")
 lengthRoom = input("Enter length room: ")
+"""Test for type value float"""
 while type(widthRoom) and type(heightRoom) and type(lengthRoom) != float:
     try:
             widthRoom=float(widthRoom)
             heightRoom=float(heightRoom)
             lengthRoom=float(lengthRoom)
             squreRoom =  WallpaperCount.Calculation.Room(lengthRoom, heightRoom, widthRoom)
+            """Enter repeat value"""
     except ValueError:
+
             if type(widthRoom)!=float:
                 print("Value width is not correct. Try again")
                 widthRoom = input("Enter width room: ")
@@ -26,6 +30,7 @@ while type(widthRoom) and type(heightRoom) and type(lengthRoom) != float:
 print("Enter amount window and door")
 
 amountWinDoor=input("Amount: ")
+"""Test for type value int"""
 while not amountWinDoor.isdigit():
     print("Value is not correct. Try again")
     amountWinDoor = input("Amount: ")
@@ -57,6 +62,7 @@ while i < amountWinDoor:
 #squreRoom.addWD(2,3)
 #squreRoom.addWD(4,2)
 #Проверка на корректность ввода
+"""Test for type value float"""
 widthWalpepper = input("Enter width walpepper: ")
 hightWalpepper = input("Enter hight walpapper: ")
 while type(widthWalpepper) and type(hightWalpepper)!=float:
@@ -74,3 +80,5 @@ print("Square room: {0}".format(squreRoom.setSquare()))
 print("Work surface: {}".format(squreRoom.workSurface()))
 print("Amount walpappers: {}".format(squreRoom.kolWalpapper(widthWalpepper,hightWalpepper)))
 print("Square once roll: {}".format(squreRoom.squreWallpepper))
+"""Print information"""
+#print(help(WallpaperCount.Calculation))
