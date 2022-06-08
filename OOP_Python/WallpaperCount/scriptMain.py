@@ -81,4 +81,4 @@ print("Work surface: {}".format(squreRoom.workSurface()))
 print("Amount walpappers: {}".format(squreRoom.kolWalpapper(widthWalpepper,hightWalpepper)))
 print("Square once roll: {}".format(squreRoom.squreWallpepper))
 """Print information"""
-#print(help(WallpaperCount.Calculation))
+print(help(WallpaperCount.Calculation.Room))
